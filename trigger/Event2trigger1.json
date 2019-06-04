@@ -1,0 +1,26 @@
+{
+	"name": "Event2trigger1",
+	"properties": {
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Event2pipeline2",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"filePath": "@triggerBody().folderPath",
+					"FileName": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/adfdemo/",
+			"scope": "/subscriptions/f6c810db-fe90-44d5-b0dc-73653ee1783d/resourceGroups/ImagineaHyperionDemo/providers/Microsoft.Storage/storageAccounts/storage2demo",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

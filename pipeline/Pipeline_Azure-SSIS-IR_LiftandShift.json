@@ -1,0 +1,31 @@
+{
+	"name": "Pipeline_Azure-SSIS-IR_LiftandShift",
+	"properties": {
+		"description": "Created via SSMS scheduling feature.",
+		"activities": [
+			{
+				"name": "Activity_Azure-SSIS-IR_LiftandShift",
+				"description": "Created via SSMS scheduling feature.",
+				"type": "ExecuteSSISPackage",
+				"policy": {
+					"timeout": "00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30
+				},
+				"typeProperties": {
+					"packageLocation": {
+						"packagePath": "AzureSSIS-IR-ADF/Azure-SSIS-IR/Azure-SSIS-IR.dtsx"
+					},
+					"runtime": "x64",
+					"environmentPath": null,
+					"connectVia": {
+						"referenceName": "Azure-SSIS-IR",
+						"type": "IntegrationRuntimeReference"
+					},
+					"loggingLevel": "basic"
+				}
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
