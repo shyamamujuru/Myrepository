@@ -1,0 +1,28 @@
+{
+	"name": "Azure-SSIS-IR",
+	"properties": {
+		"type": "Managed",
+		"description": "Azure-SSIS-IR",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "East US",
+				"nodeSize": "Standard_D8_v3",
+				"numberOfNodes": 1,
+				"maxParallelExecutionsPerNode": 2
+			},
+			"ssisProperties": {
+				"catalogInfo": {
+					"catalogServerEndpoint": "bdcsource.database.windows.net",
+					"catalogAdminUserName": "admin01",
+					"catalogAdminPassword": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"catalogPricingTier": "S1"
+				},
+				"edition": "Standard",
+				"licenseType": "LicenseIncluded"
+			}
+		}
+	}
+}
